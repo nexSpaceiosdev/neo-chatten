@@ -1,0 +1,427 @@
+{
+    "name": "chatten_token",
+    "groups": [],
+    "abi": {
+        "methods": [
+            {
+                "name": "_deploy",
+                "offset": 2910,
+                "parameters": [
+                    {
+                        "type": "Any",
+                        "name": "data"
+                    },
+                    {
+                        "type": "Boolean",
+                        "name": "update"
+                    }
+                ],
+                "safe": false,
+                "returntype": "Void"
+            },
+            {
+                "name": "symbol",
+                "offset": 0,
+                "parameters": [],
+                "safe": true,
+                "returntype": "String"
+            },
+            {
+                "name": "decimals",
+                "offset": 10,
+                "parameters": [],
+                "safe": true,
+                "returntype": "Integer"
+            },
+            {
+                "name": "totalSupply",
+                "offset": 12,
+                "parameters": [],
+                "safe": true,
+                "returntype": "Integer"
+            },
+            {
+                "name": "balanceOf",
+                "offset": 36,
+                "parameters": [
+                    {
+                        "type": "Hash160",
+                        "name": "owner"
+                    }
+                ],
+                "safe": true,
+                "returntype": "Integer"
+            },
+            {
+                "name": "tokenSupply",
+                "offset": 82,
+                "parameters": [
+                    {
+                        "type": "ByteArray",
+                        "name": "token_id"
+                    }
+                ],
+                "safe": true,
+                "returntype": "Integer"
+            },
+            {
+                "name": "tokensOf",
+                "offset": 113,
+                "parameters": [
+                    {
+                        "type": "Hash160",
+                        "name": "owner"
+                    }
+                ],
+                "safe": true,
+                "returntype": "InteropInterface",
+                "returnhint": "Iterator"
+            },
+            {
+                "name": "get_current_price",
+                "offset": 150,
+                "parameters": [
+                    {
+                        "type": "ByteArray",
+                        "name": "model_id"
+                    }
+                ],
+                "safe": true,
+                "returntype": "Integer"
+            },
+            {
+                "name": "update_price_oracle",
+                "offset": 200,
+                "parameters": [
+                    {
+                        "type": "ByteArray",
+                        "name": "model_id"
+                    },
+                    {
+                        "type": "Integer",
+                        "name": "price_gas"
+                    }
+                ],
+                "safe": false,
+                "returntype": "Boolean"
+            },
+            {
+                "name": "get_gas_reserve",
+                "offset": 292,
+                "parameters": [],
+                "safe": true,
+                "returntype": "Integer"
+            },
+            {
+                "name": "transfer",
+                "offset": 316,
+                "parameters": [
+                    {
+                        "type": "Hash160",
+                        "name": "from_addr"
+                    },
+                    {
+                        "type": "Hash160",
+                        "name": "to"
+                    },
+                    {
+                        "type": "Integer",
+                        "name": "amount"
+                    },
+                    {
+                        "type": "ByteArray",
+                        "name": "token_id"
+                    },
+                    {
+                        "type": "Any",
+                        "name": "data"
+                    }
+                ],
+                "safe": false,
+                "returntype": "Boolean"
+            },
+            {
+                "name": "mint",
+                "offset": 576,
+                "parameters": [
+                    {
+                        "type": "Hash160",
+                        "name": "to"
+                    },
+                    {
+                        "type": "ByteArray",
+                        "name": "model_id"
+                    },
+                    {
+                        "type": "Integer",
+                        "name": "amount"
+                    },
+                    {
+                        "type": "Integer",
+                        "name": "quality"
+                    }
+                ],
+                "safe": false,
+                "returntype": "Boolean"
+            },
+            {
+                "name": "burn",
+                "offset": 922,
+                "parameters": [
+                    {
+                        "type": "Hash160",
+                        "name": "owner"
+                    },
+                    {
+                        "type": "ByteArray",
+                        "name": "token_id"
+                    },
+                    {
+                        "type": "Integer",
+                        "name": "amount"
+                    }
+                ],
+                "safe": false,
+                "returntype": "Boolean"
+            },
+            {
+                "name": "buy_compute",
+                "offset": 1212,
+                "parameters": [
+                    {
+                        "type": "Hash160",
+                        "name": "buyer"
+                    },
+                    {
+                        "type": "ByteArray",
+                        "name": "model_id"
+                    },
+                    {
+                        "type": "Integer",
+                        "name": "gas_amount"
+                    }
+                ],
+                "safe": false,
+                "returntype": "Integer"
+            },
+            {
+                "name": "sell_compute",
+                "offset": 1618,
+                "parameters": [
+                    {
+                        "type": "Hash160",
+                        "name": "seller"
+                    },
+                    {
+                        "type": "ByteArray",
+                        "name": "model_id"
+                    },
+                    {
+                        "type": "Integer",
+                        "name": "amount"
+                    }
+                ],
+                "safe": false,
+                "returntype": "Integer"
+            },
+            {
+                "name": "onNEP17Payment",
+                "offset": 2133,
+                "parameters": [
+                    {
+                        "type": "Hash160",
+                        "name": "from_addr"
+                    },
+                    {
+                        "type": "Integer",
+                        "name": "amount"
+                    },
+                    {
+                        "type": "Any",
+                        "name": "data"
+                    }
+                ],
+                "safe": false,
+                "returntype": "Void"
+            },
+            {
+                "name": "onNEP11Payment",
+                "offset": 2271,
+                "parameters": [
+                    {
+                        "type": "Hash160",
+                        "name": "from_addr"
+                    },
+                    {
+                        "type": "Integer",
+                        "name": "amount"
+                    },
+                    {
+                        "type": "ByteArray",
+                        "name": "token_id"
+                    },
+                    {
+                        "type": "Any",
+                        "name": "data"
+                    }
+                ],
+                "safe": false,
+                "returntype": "Void"
+            },
+            {
+                "name": "pause",
+                "offset": 2276,
+                "parameters": [],
+                "safe": false,
+                "returntype": "Boolean"
+            },
+            {
+                "name": "resume",
+                "offset": 2314,
+                "parameters": [],
+                "safe": false,
+                "returntype": "Boolean"
+            },
+            {
+                "name": "isPaused",
+                "offset": 2352,
+                "parameters": [],
+                "safe": true,
+                "returntype": "Boolean"
+            },
+            {
+                "name": "set_oracle",
+                "offset": 2359,
+                "parameters": [
+                    {
+                        "type": "Hash160",
+                        "name": "addr"
+                    },
+                    {
+                        "type": "Boolean",
+                        "name": "auth"
+                    }
+                ],
+                "safe": false,
+                "returntype": "Boolean"
+            },
+            {
+                "name": "set_minter",
+                "offset": 2426,
+                "parameters": [
+                    {
+                        "type": "Hash160",
+                        "name": "addr"
+                    },
+                    {
+                        "type": "Boolean",
+                        "name": "auth"
+                    }
+                ],
+                "safe": false,
+                "returntype": "Boolean"
+            },
+            {
+                "name": "get_admin",
+                "offset": 2493,
+                "parameters": [],
+                "safe": true,
+                "returntype": "Hash160"
+            },
+            {
+                "name": "is_oracle",
+                "offset": 2637,
+                "parameters": [
+                    {
+                        "type": "Hash160",
+                        "name": "addr"
+                    }
+                ],
+                "safe": true,
+                "returntype": "Boolean"
+            },
+            {
+                "name": "is_minter",
+                "offset": 2647,
+                "parameters": [
+                    {
+                        "type": "Hash160",
+                        "name": "addr"
+                    }
+                ],
+                "safe": true,
+                "returntype": "Boolean"
+            },
+            {
+                "name": "withdraw_gas",
+                "offset": 2657,
+                "parameters": [
+                    {
+                        "type": "Hash160",
+                        "name": "to"
+                    },
+                    {
+                        "type": "Integer",
+                        "name": "amount"
+                    }
+                ],
+                "safe": false,
+                "returntype": "Boolean"
+            },
+            {
+                "name": "_initialize",
+                "offset": 3020,
+                "parameters": [],
+                "safe": false,
+                "returntype": "Void"
+            }
+        ],
+        "events": [
+            {
+                "name": "Transfer",
+                "parameters": [
+                    {
+                        "name": "from_addr",
+                        "type": "Hash160"
+                    },
+                    {
+                        "name": "to_addr",
+                        "type": "Hash160"
+                    },
+                    {
+                        "name": "amount",
+                        "type": "Integer"
+                    },
+                    {
+                        "name": "tokenId",
+                        "type": "ByteArray"
+                    }
+                ]
+            }
+        ]
+    },
+    "permissions": [
+        {
+            "contract": "0x726cb6e0cd8628a1350a611384688911ab75f51b",
+            "methods": [
+                "sha256"
+            ]
+        },
+        {
+            "contract": "0xfffdc93764dbaddd97c48f252a53ea4643faa3fd",
+            "methods": [
+                "getContract"
+            ]
+        },
+        {
+            "contract": "0xd2a4cff31913016155e38e474a2c06d08be276cf",
+            "methods": [
+                "transfer"
+            ]
+        }
+    ],
+    "trusts": [],
+    "features": {},
+    "supportedstandards": [],
+    "extra": null
+}

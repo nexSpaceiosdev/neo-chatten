@@ -9,9 +9,13 @@ from typing import Any, Optional
 from dataclasses import dataclass, field
 
 # SpoonOS SDK imports
+# Note: These imports will show "could not be resolved" warnings in IDE
+# until spoon-ai-sdk is installed. This is expected during development.
+_SPOON_SDK_AVAILABLE = False
 try:
-    from spoon_ai_sdk import ToolCallAgent, Tool, AgentConfig
-    from spoon_ai_sdk.memory import ConversationMemory
+    from spoon_ai_sdk import ToolCallAgent, Tool, AgentConfig  # type: ignore
+    from spoon_ai_sdk.memory import ConversationMemory  # type: ignore
+    _SPOON_SDK_AVAILABLE = True
 except ImportError:
     # Fallback for development/scaffolding
     ToolCallAgent = object
@@ -101,12 +105,19 @@ class ChattenTraderAgent(ToolCallAgent):
             neo_wallet_address: The Neo N3 wallet address for blockchain operations
             **kwargs: Additional arguments passed to ToolCallAgent
         """
-        super().__init__(
-            name=name,
-            system_prompt=self.SYSTEM_PROMPT,
-            **kwargs
-        )
+        # Only pass arguments to parent if SpoonOS SDK is available
+        # object.__init__() doesn't accept any arguments
+        if _SPOON_SDK_AVAILABLE:
+            super().__init__(
+                name=name,
+                system_prompt=self.SYSTEM_PROMPT,
+                **kwargs
+            )
+        else:
+            super().__init__()
         
+        self.name = name
+        self.system_prompt = self.SYSTEM_PROMPT
         self.neo_wallet_address = neo_wallet_address
         self.market_state = MarketState()
         self.position = TokenPosition()
